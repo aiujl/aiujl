@@ -1,0 +1,206 @@
+/* Configurações Globais */
+:root {
+    --primary-color: #000000; /* Azul vibrante para destaque */
+    --secondary-color: #c9bdb8; /* Azul escuro para fundo */
+    --text-color: #000000; /* Branco claro para o texto */
+    --light-bg: #e7d3b5; /* Fundo secundário */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- Cabeçalho e Navegação --- */
+
+header {
+    background-color: #4C271E; /* Fundo ainda mais escuro para o cabeçalho */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; /* Remove padding extra para o header container */
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Seções Gerais --- */
+
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Seção de Introdução (Hero) */
+.hero {
+    background-color: var(--light-bg);
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Seção de Portfólio (Sites) --- */
+
+.portfolio-grid h3 {
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+.portfolio-grid .container {
+    display: grid;
+    /* Cria um layout em colunas: 1 coluna em telas pequenas, 2 em médias e 3 em grandes */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.project-card h4 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin: 15px 15px 5px;
+}
+
+.project-card p {
+    font-size: 0.9em;
+    color: #000000;
+    padding: 0 15px 15px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 15px 15px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #838B76; /* Tom mais escuro no hover */
+}
+
+/* --- Contato --- */
+
+.contact {
+    background-color: var(--secondary-color);
+    border-top: 1px solid var(--light-bg);
+}
+
+.contact h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* --- Rodapé --- */
+
+footer {
+    background-color: #e9d8c9;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    .hero h2 {
+        font-size: 2em;
+    }
+}
